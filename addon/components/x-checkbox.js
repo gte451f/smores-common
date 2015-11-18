@@ -6,8 +6,10 @@ import layout from '../templates/components/x-checkbox';
  * http://stackoverflow.com/questions/24154974/trigger-an-action-on-the-change-event-with-ember-js-checkbox-input-helper
  */
 export default Ember.Checkbox.extend(Ember.ViewTargetActionSupport, {
+  layout: layout,
 
-  change: function (event) {
+  // change: function (event) {
+  change: function () {
     this._super();
     var contexts = [
       this.get('value'),

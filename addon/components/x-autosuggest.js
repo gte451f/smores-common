@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import AutoComplete from 'ember-cli-auto-complete/components/auto-complete';
 import layout from '../templates/components/x-autosuggest';
 const { computed } = Ember;
 

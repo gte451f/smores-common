@@ -1,0 +1,1 @@
+export { default } from 'smores-common/components/input-tooltip';
