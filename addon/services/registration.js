@@ -26,6 +26,18 @@ export default Ember.Service.extend({
   requests: [],
 
   /**
+   * an empty request object
+   * the cutter for your cookies
+   */
+  requestContainer: Ember.Object.extend({
+    location: null,
+    event: null,
+    program: null,
+    note: null,
+    priority: null
+  }),
+
+  /**
    * store a marker for session type persistence across wizard steps
    * use this token to detect restarts
    * start|step1|step2|step3
@@ -40,5 +52,6 @@ export default Ember.Service.extend({
     this.set('mode', 0);
     this.set('registrationNote', null);
     this.set('requests', []);
+    this.set('wizardToken', 'start');
   }
 });
