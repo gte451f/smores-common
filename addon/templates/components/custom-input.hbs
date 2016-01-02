@@ -1,0 +1,47 @@
+{{#if isText}}
+    {{#if isDate}}
+        {{pikaday-input value=detectedValue format='MM-DD-YYYY' valueFormat='YYYY-MM-DD' class="form-control"}}
+    {{else}}
+        {{input value=detectedValue type=detectedType class="form-control"}}
+    {{/if}}
+{{/if}}
+
+{{#if isTextArea}}
+    {{textarea value=detectedValue class="form-control" rows="5"}}
+{{/if}}
+
+{{#if isSelect}}
+    {{#x-select value=detectedValue class='form-control'}}
+        <option>Select</option>
+        {{#each valueList as |item|}}
+            {{#x-option value=item}}{{item}}{{/x-option}}
+        {{/each}}
+    {{/x-select}}
+{{/if}}
+
+{{#if isRadio}}
+    {{#each valueList as |item| }}
+        {{radio-button value=item groupValue=detectedValue}} {{item}}
+    {{/each}}
+{{/if}}
+
+{{#if isCheckbox}}
+    <div class="checkbox">
+        <label>
+            {{input type="checkbox" name=customField.name checked=detectedValue}}
+        </label>
+    </div>
+{{/if}}
+
+{{#if isMultiCheckbox}}
+    <div class="form-group">
+        {{#multiselect-checkboxes options=valueList selection=detectedValue as |field isSelected|}}
+            <div class="checkbox">
+                <label>
+                    {{input type="checkbox" checked=isSelected}}
+                    {{field}}
+                </label>
+            </div>
+        {{/multiselect-checkboxes}}
+    </div>
+{{/if}}
