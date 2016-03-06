@@ -15,6 +15,11 @@ export default DS.Model.extend({
   // relationshps
   account: DS.belongsTo('account', {
     async: false
+  }),
+
+  ownerNumbers: DS.hasMany('owner-number', {
+    async: false
   })
+
 });
 
