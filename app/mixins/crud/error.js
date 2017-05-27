@@ -1,1 +1,0 @@
-export { default } from 'smores-common/mixins/crud/error';
